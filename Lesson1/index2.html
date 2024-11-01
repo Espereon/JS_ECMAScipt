@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // объединяем массив
+        // const array1 = [1, 2, 3, 1, 5, 6, 7, 4];
+        // const array2 = [4,5,6];
+        // function spread(array1, array2) {
+        //     return [...array1, ...array2];
+        // };
+        // console.log(spread(array1, array2));
+
+        //  
+        // function removeDublicates(...rest) {
+        //     return rest.filter((value, index) => rest.indexOf(value) === index);
+        // }
+        // console.log(removeDublicates(1, 4, 5, 6, 6, 7, 1, 2));
+
+        const getEvenNubmer = (num) => num.filter(item => item % 2 === 0);
+        console.log(getEvenNubmer([1, 2, 3, 4, 5, 6]));
+
+        function calculateAverage(num) {
+            const sum = num.reduce((acc, item) => acc + item, 0);
+            return sum / num.length;
+        }
+        console.log(calculateAverage([2, 2, 2, 2, 2]));
+    </script>
+
+</body>
+
+</html>

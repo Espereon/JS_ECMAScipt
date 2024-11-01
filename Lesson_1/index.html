@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // const array = [10, 5];
+        // function max(param1, param2) {
+        //     if (param1 > param2) {
+        //         return param1;
+        //     } else if (param1 < param2) {
+        //         return param2;
+        //     } else {
+        //         return 'Числа равны';
+        //     }
+        // }
+        // console.log(max(...array));
+
+        // const array = [1, 3, 10];
+        // console.log(Math.count(...array));
+
+        const array = [1, 3, 5, 10, 7, 89];
+        function max(param1, param2, ...rest) {
+            if (param1 > param2) {
+                console.log(param1);
+            } else {
+                console.log(param2);
+            }
+            console.log(rest);
+        }
+        console.log(max(...array));
+    </script>
+</body>
+
+</html>

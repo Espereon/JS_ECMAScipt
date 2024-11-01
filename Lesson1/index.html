@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // const arr = [1, 3, 7, 9, 5, 10];
+        // function max(param1, param2, ...rest) {
+        //     if (param1 > param2) {
+        //         console.log(param1);
+        //     } else if (param1 < param2) {
+        //         console.log(param2);
+        //     } {
+        //         console.log(rest);
+        //     }
+        // }
+        // console.log(max(...arr));
+
+        // let count = 0;
+        // const upCount = (params) => {
+        //     return count + params;
+        // }
+        // console.log(upCount(5));
+
+        function factorial(number) {
+            if (number === 1) {
+                return 1;
+            }
+            return factorial(number - 1) * number;
+        }
+        console.log(factorial(10));
+    </script>
+</body>
+
+</html>
