@@ -36,30 +36,67 @@
 
 // Задание № 2
 
-class Animal {
-    constructor(name) {
+// class Animal {
+//     constructor(name) {
+//         this.name = name;
+//     }
+//     speak() {
+//         console.log(`Животное ${this.name} издаёт звук`);
+//     }
+// };
+
+// class Dog extends Animal {
+//     constructor(name, breed) {
+//         super(name);
+//         this.breed = breed;
+//     }
+//     fetch() {
+//         console.log(`Собака ${this.name} принесла мяч`);
+//     }
+// };
+
+
+// const animal1 = new Animal('Животное');
+// animal1.speak();
+// const dog1 = new Dog('Бобик', 'Дворняжка');
+// dog1.speak();
+// console.log(dog1.breed);
+// dog1.fetch();
+
+// Задание № 3
+
+class Product {
+    constructor(name, price) {
         this.name = name;
+        this.price = price;
     }
-    speak() {
-        console.log(`Животное ${this.name} издаёт звук`);
+}
+
+class ShoppingCart {
+    constructor(customerName, initialTotalCost) {
+        this.customerName = customerName;
+        this.initialTotalCost = initialTotalCost;
+        this.item = [];
     }
-};
-
-class Dog extends Animal {
-    constructor(name, breed) {
-        super(name);
-        this.breed = breed;
+    addItem(product, quantity = 1) {
+        this.initialTotalCost += product.price * quantity;
+        this.item.push({ product, quantity })
     }
-    fetch() {
-        console.log(`Собака ${this.breed} принесла мяч`);
+
+    getCurrentCost() {
+        return this.initialTotalCost;
     }
-};
 
+    checkout() {
+        console.log(`Заказ оформлен для ${this.customerName}. Общая стомиомсть заказа ${this.initialTotalCost}`);
+    }
+}
 
-const animal1 = new Animal('Животное');
-animal1.speak();
-const dog1 = new Dog('Бобик', 'Дворняжка');
-dog1.speak();
-console.log(dog1.breed);
-dog1.fetch();
+const product1 = new Product('Футболка', 1000);
+const product2 = new Product('Джинсы', 2000);
 
+const cart = new ShoppingCart('Дима', 0);
+cart.addItem(product1, 2);
+cart.addItem(product2);
+console.log(`Общая стоимость ${cart.getCurrentCost()}`);
+cart.checkout();
